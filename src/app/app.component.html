@@ -1,0 +1,27 @@
+<app-spinner></app-spinner> 
+<div class="row" style="height:100%;margin-right:0px !important">
+	<div class="col-12 mainPanel">			
+		<app-navbar></app-navbar>
+		<div class="appcontainer">
+			<div class="row">
+				<div class="col-4"></div>				
+				<div class="col-4 middlePanel"> 	
+						<div>
+								<img src="../assets/img/mobile.png" class="mobile">	
+									<div class="row">
+										<div class="col-4 tower"><img src="../assets/img/mTower_icon.png"  style="width: 41px;"></div>
+										<div class="col-4 time">{{today| date : 'shortTime'}}</div>
+										<div class="col-4 battery" ><img src="../assets/img/battery.png" style="width: 73px;margin-left: -23px;"></div>
+									</div>
+						</div>
+						<router-outlet ></router-outlet>			
+				</div>
+				<div class="col-4"></div>		
+			</div>	
+			<!-- <div class="container">	
+				<img src="../assets/img/mobile.png">	
+				<div class="tag">Featured</div>
+			</div>	 -->
+		</div>
+	</div>
+</div>
