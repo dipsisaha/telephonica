@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { Router,NavigationEnd  } from '@angular/router';
 import { ApplicationConstants } from './app.constants'
+import { DatePipe } from '@angular/common';
+
 
 @Component({
   selector: 'app-root',
@@ -9,7 +11,7 @@ import { ApplicationConstants } from './app.constants'
 })
 export class AppComponent {
   title = 'app';
-  today: number = Date.now();
+  Clock = Date.now();
  
   constants = ApplicationConstants;
   
@@ -17,6 +19,9 @@ export class AppComponent {
   }
   
   ngOnInit() {  
+    setInterval(() => {
+      this.Clock = Date.now();
+    }, 1000);
         
         this.router.events.subscribe((evt) => {
             if (!(evt instanceof NavigationEnd)) {

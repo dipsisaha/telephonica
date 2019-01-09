@@ -1,0 +1,8 @@
+{ 
+    "/api/*": {
+        "target": "https://noderedsolution.mybluemix.net/",
+        "secure": true,
+        "changeOrigin": true
+ 
+    }
+ }

@@ -26,7 +26,6 @@ import { NavbarService } from './navbar/navbar.service'
 import { CommonService } from './_services/common.service';
 import { TitleService } from './_services/title.service';
 import { AuthenticationService } from './_services/authentication.service';
-import { ExcelService } from './_services/excel.service';
 
 import { SpinnerComponent } from './_helper/spinner.component';
 
@@ -36,7 +35,9 @@ import { DateFormatPipe } from './_pipe/dateformat.pipe';
 import { TokenInterceptor} from './_interceptor/tokeninterceptor.interceptor';
 
 import { NavigationGuard} from './_guard/navigation.guard';
-import { MessagelistComponent } from './messagelist/messagelist.component' 
+import { MessagelistComponent } from './messagelist/messagelist.component';
+import { MessageComponent } from './message/message.component';
+import { MessagedetailsComponent } from './messagedetails/messagedetails.component' 
 
 
 const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
@@ -50,7 +51,9 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
     SortPipe,
     DateFormatPipe,
     CeilPipe,
-    MessagelistComponent
+    MessagelistComponent,
+    MessageComponent,
+    MessagedetailsComponent
   ],
   imports: [
     NgbModule.forRoot(),
@@ -71,7 +74,7 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
   providers: [
     {provide: HTTP_INTERCEPTORS, useClass: TokenInterceptor, multi: true},
     {provide: PERFECT_SCROLLBAR_CONFIG,useValue: DEFAULT_PERFECT_SCROLLBAR_CONFIG}, 		
-  	NavbarService,CommonService,TitleService,AuthenticationService,ExcelService,NavigationGuard
+  	NavbarService,CommonService,TitleService,AuthenticationService,NavigationGuard
   	],
   bootstrap: [AppComponent]
 })

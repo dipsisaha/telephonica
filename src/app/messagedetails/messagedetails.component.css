@@ -1,0 +1,13 @@
+.mleft{
+    padding-left: 25px;
+}
+.mright {
+    padding-left: 0px;
+}
+hr{
+    margin-top: 6px;
+  }
+.wordwrap{
+    word-wrap: break-word;
+}
+  

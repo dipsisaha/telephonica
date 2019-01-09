@@ -10,62 +10,42 @@
 	padding-right:0px;
 }
 
-.mobile{
-	height: 98vh;
-	padding-left: 75px;
-	margin-top: 0;
-}
-
-.topbar {
-	margin-top: -500px;
-}
-.tower{
-	position: absolute;
-    top: 77px;
-    left: 108px;
-}
-.time{
-	text-align: center;
-    position: absolute;
-    top: 77px;
-    left: 170px;
-}
-.battery{
-	position: absolute;
-    top: 77px;
-    left: 289px;	
-}
-.container {
-    border: 1px solid #DDDDDD;
-    width: 200px;
-    height: 200px;
-}
-.tag {
-    float: left;
+.middlePanel{
+    background-image:url('../assets/img/mobile.png');
+    background-repeat: no-repeat;
+    background-position: top center;
+    background-size: 100%;
+    width: 350px;
+    height: 100%;
+    margin: 0 auto;
     position: relative;
-    left: 0px;
-    top: 0px;
-    background-color: green;
-    z-index: 1000;
-    margin-bottom: -20px;
+    overflow: hidden;
 }
-
-/* .container {
-    border: 1px solid #DDDDDD;
-    width: 40%;
-    height: 90%;
+.middlePanel  .midPanelContainer .midPanelTopIcon {
+    display: inline-block;
+    width: 33%;
 }
-.tag {
-    float: left;
+.middlePanel  .midPanelContainer .midPanelTopIcon img {
+    width: 60px;
+}
+.middlePanel  .midPanelContainer .midPanelTopIcon.battery {
+    text-align: right;
+    padding-right: 10px;
+}
+.middlePanel  .midPanelContainer .midPanelTopIcon.time {
+    text-align: center;
+}
+.middlePanel  .midPanelContainer .midPanelTopIcon.battery img {
+    width: 80px;
+}
+.middlePanel  .midPanelContainer{
     position: relative;
-    left: 0px;
-    top: 0px;
-    background-color: green;
-    z-index: 1000;
-    margin-bottom: -20px;
-} */
-/* .mobile{
-	height: 80%;
-	padding-left: 75px;
-	margin-top: 0;
-} */
+    width: 90%;
+    margin: 90px auto 0 auto; 
+    padding: 5px 10px;
+}
+.midContainer {
+    padding: 5px;
+    margin-right: 15px;
+    margin-top: 5px;
+}

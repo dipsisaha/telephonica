@@ -5,5 +5,5 @@
 
 export const environment = {
   production: false,  
-  APIHOST: "http://localhost:3000" 
+  APIHOST: "https://noderedsolution.mybluemix.net/" 
 };

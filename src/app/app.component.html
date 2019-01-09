@@ -2,26 +2,19 @@
 <div class="row" style="height:100%;margin-right:0px !important">
 	<div class="col-12 mainPanel">			
 		<app-navbar></app-navbar>
-		<div class="appcontainer">
-			<div class="row">
-				<div class="col-4"></div>				
-				<div class="col-4 middlePanel"> 	
-						<div>
-								<img src="../assets/img/mobile.png" class="mobile">	
-									<div class="row">
-										<div class="col-4 tower"><img src="../assets/img/mTower_icon.png"  style="width: 41px;"></div>
-										<div class="col-4 time">{{today| date : 'shortTime'}}</div>
-										<div class="col-4 battery" ><img src="../assets/img/battery.png" style="width: 73px;margin-left: -23px;"></div>
-									</div>
+		<div class="appcontainer">		
+				<div class="middlePanel">
+					<div class="midPanelContainer">
+						<div class="midHeaderTopPanel">
+							<span class="tower midPanelTopIcon"><img src="../assets/img/mTower_icon.png" style="padding-left: 4px;"></span>
+							<span class="time midPanelTopIcon">{{Clock | date:'shortTime'}}</span>
+							<span class="battery midPanelTopIcon"><img src="../assets/img/battery.png" style="padding-right: 6px;"></span>
 						</div>
-						<router-outlet ></router-outlet>			
+						<div class="midContainer">
+							<router-outlet ></router-outlet>			
+						</div>
+					</div>
 				</div>
-				<div class="col-4"></div>		
-			</div>	
-			<!-- <div class="container">	
-				<img src="../assets/img/mobile.png">	
-				<div class="tag">Featured</div>
-			</div>	 -->
 		</div>
 	</div>
 </div>

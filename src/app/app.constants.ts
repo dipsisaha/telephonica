@@ -7,6 +7,11 @@ export class ApplicationConstants {
     public static USER_IDLE_WAIT_TIME = 300;//system will wait for specified sec after user is marked idle and before timeout is done (10 + 5 = 15 mins)
     
     public static TOKEN_REFERSH_TIMESPAN = 1800000; //1 hours - 3600000, 55 mins - 3300000
+
+    public static API_PREFIX = 'api';
+    public static FUNCTION_GETALLMESSAGE = 'telefonicasmsall';
+    public static FUNCTION_SENDMESSAGE = 'telefonicasms';
+    public static FUNCTION_MESSAGEQUERY = 'telefonicasmsquery';
     
 	
 }

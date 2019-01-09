@@ -1,0 +1,42 @@
+<div class="messagecontainer">
+  <div class="topbar">
+      <div class="row">
+        <div class="col-4  pointer" (click)="backTomessagelist()"> <img src="../assets/img/back.png" style="width: 15px;padding-left: 6px;"> </div>
+        <div class="col-4 text-center"><b>Messages</b> </div>
+        <div class="col-4 text-right pointer"></div>
+      </div>
+    </div>
+  <hr>
+  <div class="messagedetailscontainer">
+    <div class="row">
+        <div class="col-4 mleft"><b>To&nbsp;:</b></div>
+        <div class="col-8">{{listdata.to}}</div>
+    </div>
+    <hr>
+    <div class="row">
+        <div class="col-4 mleft"><b>From&nbsp;:</b></div>
+        <div class="col-8">{{listdata.from}}</div>
+    </div>
+    <hr>
+    <div class="row">
+        <div class="col-4 mleft"><b>Vendor&nbsp;:</b></div>
+        <div class="col-8">{{listdata.vendor}}</div>
+    </div>
+    <hr>
+    <div class="row">
+        <div class="col-4 mleft"><b>Message&nbsp;:</b></div>
+        <div class="col-8 wordwrap">{{listdata.message}}</div>
+    </div>
+    <hr>
+    <div class="row">
+        <div  class="col-4 mleft"><b>SHA Of Message&nbsp;:</b></div>
+        <div class="col-8 wordwrap">{{listdata.shaOfMessage}}</div>
+    </div>
+    <hr>
+    <div class="row">
+        <div  class="col-4 mleft"><b>Date & Time&nbsp;:</b></div>
+        <div class="col-8">{{listdata.timestamp | date :'short'}}</div>
+    </div> 
+    <hr>
+  </div>
+</div>

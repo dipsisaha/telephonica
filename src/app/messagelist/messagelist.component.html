@@ -1,8 +1,38 @@
 <div class="message">
-    <div class="row topsection">
-    hiiii
-  kkkkkkkkkkkkkkkkddddddddddddkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk
-      
+  <div class="topbar">
+    <div class="row">
+      <div class="col-4 editicon" *ngIf="!txHashnotification"><img src="../assets/img/off-notification.png" style="padding-right: 6px;width: 24px;"></div>
+      <div class="col-4 editicon pointer" *ngIf="txHashnotification" (click)="clickMe();"><img src="../assets/img/notification.png" style="padding-right: 6px;width: 24px;"></div>
+      <div class="col-4 text-center"><b>Messages</b> </div>
+      <div class="col-4 text-right pointer" (click)="messageWindow()"> <img src="../assets/img/edit.png" style="padding-right: 6px;width: 24px;"></div>
     </div>
   </div>
-  
+<hr>
+<div>
+  <input type="text" name="search" [(ngModel)]="txhash" class="searchbox">
+  <img  *ngIf="txhash && txhash != ''" (click)="clearSearch()"  src="../../assets/img/close_icon.png" class="clearicon pointer">&nbsp;&nbsp;
+  <img src="../assets/img/search_btn.png" class="search_img pointer" (click)="searchTxHash(txhash)">
+</div>
+<br>
+<perfect-scrollbar style="max-width: 600px; max-height: 400px;" [config]="config">
+<div class="listcontainer" *ngIf="listdata && listdata.length>0">
+  <div class="list" *ngFor="let listdetails of listdata" >
+    <div class="row">
+      <div class="col-6"><b>{{listdetails.to}}</b></div>
+      <div class="col-6 text-right gray font-13">{{listdetails.timestamp | date :'short'}} </div>
+    </div>
+    <div class="row">
+      <div class="col-12 gray">{{listdetails.message}}</div>
+    </div>
+    <hr>
+  </div>
+</div>
+</perfect-scrollbar>
+</div>
+<div id="modal-id" class="modal-custom " *ngIf='modalview'>   
+    <span class="close-modal pointer" (click)="modalview=false">&#10006;</span>
+    <div>
+      <input type="text" value={{token}} style="width: 88%;" #userinput>
+      <button (click)="copyInputMessage(userinput)"><img src="../assets/img/copy_icon.png" title="click to copy" style="width: 15px;"></button>
+    </div>
+  </div>

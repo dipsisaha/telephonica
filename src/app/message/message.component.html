@@ -1,0 +1,20 @@
+<div class="messagecontainer">
+    <div class="topbar">
+        <div class="row">
+          <div class="col-4  pointer" (click)="backTomessagelist()"> <img src="../assets/img/back.png" style="width: 15px;padding-left: 6px;"> </div>
+          <div class="col-4 text-center"><b>Messages</b> </div>
+          <div class="col-4 text-right pointer"></div>
+        </div>
+      </div>
+    <hr>
+    <div class="container">
+      <form #loginForm="ngForm">
+      <input type="text" name="to" placeholder="To" class="to" #to="ngModel" [class.is-invalid]="to.invalid && to.touched" [(ngModel)]="model.to" required>
+      <p class="invalid" [class.d-none]="to.valid || to.untouched">To cannot be Blank</p>
+      <br><br>
+      <textarea name="message" placeholder="Message" class="messagebox" #message="ngModel" [(ngModel)]="model.message"></textarea>
+      <br><br>
+      <button [disabled]="loginForm.form.invalid" [ngClass]="loginForm.form.invalid ?'diabled-class':'sendbutton'"   class="sendbutton" (click)="sendMessage()">Send</button>
+      </form>
+    </div>
+</div>
