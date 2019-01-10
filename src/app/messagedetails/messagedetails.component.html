@@ -25,14 +25,14 @@
     <hr>
     <div class="row">
         <div class="col-4 mleft"><b>Message&nbsp;:</b></div>
-        <div class="col-8 wordwrap">{{listdata.message}}</div>
+        <div class="col-8 wordwrap">{{listdata.message}} with &nbsp;{{listdata.shaOfMessage}}</div>
     </div>
     <hr>
-    <div class="row">
+    <!-- <div class="row">
         <div  class="col-4 mleft"><b>SHA Of Message&nbsp;:</b></div>
         <div class="col-8 wordwrap">{{listdata.shaOfMessage}}</div>
     </div>
-    <hr>
+    <hr> -->
     <div class="row">
         <div  class="col-4 mleft"><b>Date & Time&nbsp;:</b></div>
         <div class="col-8">{{listdata.timestamp | date :'short'}}</div>

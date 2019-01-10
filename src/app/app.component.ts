@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
-import { Router,NavigationEnd  } from '@angular/router';
-import { ApplicationConstants } from './app.constants'
+import { Router,NavigationEnd,ActivatedRoute  } from '@angular/router';
+import { ApplicationConstants } from './app.constants';
 import { DatePipe } from '@angular/common';
+import { DataService } from "./_services/data.service";
 
 
 @Component({
@@ -12,13 +13,15 @@ import { DatePipe } from '@angular/common';
 export class AppComponent {
   title = 'app';
   Clock = Date.now();
+  orgName = 'user';
  
   constants = ApplicationConstants;
   
-  constructor(private router: Router) { 
+  constructor(private router: Router,private activatedRoute: ActivatedRoute, private data:DataService) { 
   }
   
   ngOnInit() {  
+    //this.data.currentOrgId.subscribe(orgId => this.orgName = orgId);
     setInterval(() => {
       this.Clock = Date.now();
     }, 1000);

@@ -26,6 +26,7 @@ import { NavbarService } from './navbar/navbar.service'
 import { CommonService } from './_services/common.service';
 import { TitleService } from './_services/title.service';
 import { AuthenticationService } from './_services/authentication.service';
+import { DataService } from './_services/data.service'
 
 import { SpinnerComponent } from './_helper/spinner.component';
 
@@ -74,7 +75,7 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
   providers: [
     {provide: HTTP_INTERCEPTORS, useClass: TokenInterceptor, multi: true},
     {provide: PERFECT_SCROLLBAR_CONFIG,useValue: DEFAULT_PERFECT_SCROLLBAR_CONFIG}, 		
-  	NavbarService,CommonService,TitleService,AuthenticationService,NavigationGuard
+  	NavbarService,CommonService,TitleService,AuthenticationService,NavigationGuard,DataService
   	],
   bootstrap: [AppComponent]
 })

@@ -13,5 +13,6 @@ export class ApplicationConstants {
     public static FUNCTION_SENDMESSAGE = 'telefonicasms';
     public static FUNCTION_MESSAGEQUERY = 'telefonicasmsquery';
     
-	
+    public static ORG_USER = 'user';
+    public static ORG_ADMIN = 'admin';
 }

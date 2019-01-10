@@ -2,6 +2,7 @@ import { Component, OnInit, ViewChild , EventEmitter} from '@angular/core';
 import { NgbModal, ModalDismissReasons,NgbModalOptions, NgbModalRef} from '@ng-bootstrap/ng-bootstrap';
 import {CommonService} from '../_services/common.service' ;
 import { AuthenticationService } from '../_services/authentication.service';
+import { MessageService } from '../_services/message.service';
 
 @Component({
   selector: 'app-spinner',
@@ -14,7 +15,7 @@ export class SpinnerComponent implements OnInit {
   
   @ViewChild('spinner') spinner;
   
-  constructor(private modalService: NgbModal,private commonService:CommonService,private authService: AuthenticationService) { 
+  constructor(private modalService: NgbModal,private commonService:CommonService,private authService: AuthenticationService,private messageService: MessageService) { 
     commonService.spinner.subscribe(state=>{
       console.log("common spinner captured");
       if(state==true){
@@ -25,6 +26,15 @@ export class SpinnerComponent implements OnInit {
       }
     });
     authService.spinner.subscribe(state=>{
+      console.log("auth spinner captured");
+      if(state==true){
+        this.openSpinner();
+      }
+      else{
+        this.closeSpinner();
+      }
+    }); 
+    messageService.spinner.subscribe(state=>{
       console.log("auth spinner captured");
       if(state==true){
         this.openSpinner();

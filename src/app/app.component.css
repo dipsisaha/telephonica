@@ -49,3 +49,10 @@
     margin-right: 15px;
     margin-top: 5px;
 }
+.logo{
+    position: absolute;
+    z-index: 4;
+    width: 313px;
+    padding-top: 35px;
+    padding-left: 49px;
+}

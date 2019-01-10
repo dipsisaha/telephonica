@@ -7,9 +7,8 @@ import { NavigationGuard} from './_guard/navigation.guard'
 
 
 export const AppRoutes:Routes = [
-    { path :'',component : MessagelistComponent,data:{org:'',title: "Message"}},
-    { path : 'message',component :MessageComponent,data:{org:'',title: "Create Message"}},
-    { path : 'messagedetails/:txhash',component :MessagedetailsComponent,data:{org:'',title: "Message Details"}},
-    { path : '**',component : MessagelistComponent,data:{org:'',title: "Message"}},
+    { path :'',component : MessagelistComponent,data:{org:'user',title: "Message"}},
+    { path : 'message',component :MessageComponent,data:{org:'user',title: "Create Message"}},
+    { path : 'messagedetails/:txhash',component :MessagedetailsComponent,data:{org:'user',title: "Message Details"}},
     
 ];
