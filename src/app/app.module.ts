@@ -38,7 +38,8 @@ import { TokenInterceptor} from './_interceptor/tokeninterceptor.interceptor';
 import { NavigationGuard} from './_guard/navigation.guard';
 import { MessagelistComponent } from './messagelist/messagelist.component';
 import { MessageComponent } from './message/message.component';
-import { MessagedetailsComponent } from './messagedetails/messagedetails.component' 
+import { MessagedetailsComponent } from './messagedetails/messagedetails.component';
+import { AdminlistComponent } from './adminlist/adminlist.component' 
 
 
 const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
@@ -54,7 +55,8 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
     CeilPipe,
     MessagelistComponent,
     MessageComponent,
-    MessagedetailsComponent
+    MessagedetailsComponent,
+    AdminlistComponent
   ],
   imports: [
     NgbModule.forRoot(),

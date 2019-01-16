@@ -3,9 +3,8 @@
 	<div class="col-12 mainPanel">			
 		<app-navbar></app-navbar>
 		<div class="appcontainer">	
-				<img src="../assets/img/telefonica.png" class="logo">	
-				<!-- <div class="middlePanel" *ngIf="constants.ORG_USER == orgId"> -->
-				 <div class="middlePanel">
+				<img src="../assets/img/telefonica.png" class="logo" *ngIf="constants.ORG_USER == orgName">		
+				<div class="middlePanel" *ngIf="constants.ORG_USER == orgName">
 					<div class="midPanelContainer">
 						<div class="midHeaderTopPanel">
 							<span class="tower midPanelTopIcon"><img src="../assets/img/mTower_icon.png" style="padding-left: 4px;"></span>
@@ -15,6 +14,14 @@
 						<div class="midContainer">
 							<router-outlet ></router-outlet>			
 						</div>
+					</div>
+				</div>
+				<div class="adminPanel" *ngIf="constants.ORG_ADMIN == orgName">
+					<div class="row">
+						<div class="col-12 adminlogo">ABC NEWS</div>
+					</div>
+					<div class="adminContainer">
+							<router-outlet ></router-outlet>
 					</div>
 				</div>
 		</div>

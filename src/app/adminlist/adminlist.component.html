@@ -1,0 +1,45 @@
+
+<div class="adminbox">
+<div class="row calenderdiv">
+  <div class="col-4 text-right font-18">Select Date Range</div>
+  <div class="col-3 calender">
+    <my-date-range-picker name="mydaterange" [options]="myDateRangePickerOptions" [(ngModel)]="model"
+    required name="mydaterange" (dateRangeChanged)="onDateRangeChanged($event);" ></my-date-range-picker>
+  </div>
+</div>
+<br>
+<div class=" messagelistcontainer">
+  <div class="row header">
+      <div class="col-1 text-right"><b>#</b></div>
+      <div class="col-2"><b>Subscriber Number</b></div>
+      <div class="col-2"><b>Subscriber Details</b></div>
+      <div class="col-2"><b>Message</b></div>
+      <div class="col-3"><b>Time</b></div>
+      <div class="col-2"><b>Status</b></div>
+  </div>
+  <hr>
+  <perfect-scrollbar style="max-width: 1450px;max-height: 339px;" [config]="config">
+  <div  *ngIf="listdata && listdata.length>0">
+    <div class="list " *ngFor="let listdetails of listdata; let i = index">
+      <div class="row">
+          <div class="col-1 text-right">{{i+1}}</div>
+          <div class="col-2">{{listdetails.from}}</div>
+          <div class="col-2">{{listdetails.vendor}}</div>
+          <div class="col-2">{{listdetails.message}}</div>
+          <div class="col-3">{{listdetails.timestamp | date :'short'}}</div>
+          <div class="col-2 pointer"> <img src="../assets/img/edit-property.png" style="padding-right: 6px;width: 24px;" (click)="viewdetails(listdetails._id)" title="View Details"></div>
+      </div>
+      <hr> 
+    </div>
+  </div>
+  <div *ngIf="listdata && listdata.length==0">
+      <div class="list">
+        <div class="row">
+            <div class="col-12 text-center">No Record Found</div>
+        </div>   
+      </div>
+  </div>
+</perfect-scrollbar>
+</div>
+
+</div>

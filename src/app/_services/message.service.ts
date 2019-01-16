@@ -75,6 +75,24 @@ export class MessageService {
 
   }
 
+  searchMessageForAdmin(startTimeStamp,endTimeStamp):Observable<MessageList[]> {
+    let _url = "/"+this.constants.API_PREFIX+"/"+this.constants.FUNCTION_SMSADMIN;
+
+    this.spinner.emit(true);
+    this.reqJson={"startTimeStamp":startTimeStamp,"endTimeStamp":endTimeStamp};
+    let headers = new HttpHeaders();
+    headers = headers.set("Content-Type", "application/json");
+
+    return this.http.post<MessageList[]>(_url,this.reqJson,{headers:headers})
+      .pipe(
+      retry(3), 
+      catchError(this.handleError) 
+    ).finally(() => {
+      this.spinner.emit(false);	    	
+    });
+
+  }
+
   handleError(error: HttpErrorResponse) {
     return throwError(error.message || "Server Error")
   }

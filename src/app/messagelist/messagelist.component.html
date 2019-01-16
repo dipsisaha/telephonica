@@ -22,7 +22,8 @@
       <div class="col-6 text-right gray font-13">{{listdetails.timestamp | date :'short'}} </div>
     </div>
     <div class="row">
-      <div class="col-12 gray">{{listdetails.message}}</div>
+      <div class="col-10 gray">{{listdetails.message}}</div>
+      <div class="col-2"><img src="../assets/img/mobile-details.png" class="pointer" (click)="searchTxHash(listdetails._id)"></div>
     </div>
     <hr>
   </div>

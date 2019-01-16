@@ -10,4 +10,14 @@ hr{
 .wordwrap{
     word-wrap: break-word;
 }
+.messagecontainerforadmin{
+    background-color: white;
+    height: 410px;
+    margin-top: 40px;
+}
+.detailscontainer{
+    padding-top: 50px;
+    padding-left: 40px;
+    padding-right: 40px;
+}
   
