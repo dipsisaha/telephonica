@@ -1,4 +1,4 @@
-<div class="messagecontainer" *ngIf="constants.ORG_USER == orgName">
+<div class="messagecontainer">
   <div class="topbar">
       <div class="row">
         <div class="col-4  pointer" (click)="backTomessagelist()"> <img src="../assets/img/back.png" style="width: 15px;padding-left: 6px;"> </div>
@@ -39,54 +39,4 @@
     </div> 
     <hr>
   </div>
-</div>
-<div class="messagecontainerforadmin" *ngIf="constants.ORG_ADMIN == orgName">
-    <div class="topbar">
-        <div class="row">
-            <div class="col-4  pointer" (click)="backToadminmessagelist()" style="padding-left: 59px;padding-top: 16px;"> <img src="../assets/img/back.png" style="width: 15px;padding-left: 6px;"> Back</div>
-            <div class="col-4 text-center"></div>
-            <div class="col-4 text-right pointer"></div>
-        </div>
-    </div>
-    <div class="detailscontainer">  
-    <div class="row">
-                <div class="col-4 mleft"><b>To&nbsp;:</b></div>
-                <div class="col-8">{{listdata.to}}</div>
-            </div>
-            <hr>
-            <div class="row">
-                <div class="col-4 mleft"><b>From&nbsp;:</b></div>
-                <div class="col-8">{{listdata.from}}</div>
-            </div>
-            <hr>
-            <div class="row">
-                <div class="col-4 mleft"><b>Vendor&nbsp;:</b></div>
-                <div class="col-8">{{listdata.vendor}}</div>
-            </div>
-            <hr>
-            <div class="row">
-                <div class="col-4 mleft"><b>Message&nbsp;:</b></div>
-                <div class="col-8 wordwrap">{{listdata.message}} with &nbsp;{{listdata.shaOfMessage}}</div>
-            </div>
-            <hr>
-            <div class="row">
-                <div  class="col-4 mleft"><b>Date & Time&nbsp;:</b></div>
-                <div class="col-8">{{listdata.timestamp | date :'short'}}</div>
-            </div> 
-            <hr>
-            <div class="row">
-                    <div  class="col-4 mleft"><b>Status&nbsp;:</b></div>
-                    <div class="col-8">
-                            <span *ngIf="listdata.msgVerificationResult == 'true'">
-                                    <img src="../assets/img/verified.png" style="padding-right: 6px;width: 24px;">
-                                Verified
-                            </span>
-                            <span *ngIf="listdata.msgVerificationResult == 'false'">
-                                    <img src="../assets/img/nonverified.png" style="padding-right: 6px;width: 24px;">
-                                Non-Verified
-                            </span>
-                            
-                    </div>
-                </div>
-        </div>  
 </div>

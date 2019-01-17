@@ -3,7 +3,8 @@
 	<div class="col-12 mainPanel">			
 		<app-navbar></app-navbar>
 		<div class="appcontainer">	
-				<img src="../assets/img/telefonica.png" class="logo" *ngIf="constants.ORG_USER == orgName">		
+				<img src="../assets/img/telefonica.png" class="logo" *ngIf="constants.ORG_USER == orgName">
+				<img src="../assets/img/abc.png" class="logo" *ngIf="constants.ORG_ADMIN == orgName">		
 				<div class="middlePanel" *ngIf="constants.ORG_USER == orgName">
 					<div class="midPanelContainer">
 						<div class="midHeaderTopPanel">
@@ -18,7 +19,7 @@
 				</div>
 				<div class="adminPanel" *ngIf="constants.ORG_ADMIN == orgName">
 					<div class="row">
-						<div class="col-12 adminlogo">ABC NEWS</div>
+						<div class="col-12 adminlogo">&nbsp;</div>
 					</div>
 					<div class="adminContainer">
 							<router-outlet ></router-outlet>

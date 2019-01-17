@@ -13,7 +13,9 @@ export class AdminlistComponent implements OnInit {
 
   private model;
   public listdata=[];
+  public detaildata=[];
   public errorMsg;
+  public modalview=false;
   myDateRangePickerOptions: IMyDrpOptions = {
     dateFormat: 'mmm dd yyyy',
     
@@ -80,6 +82,22 @@ if(bDate && eDate){
 viewdetails(txhash){
   console.log(txhash);
   this.router.navigate(['admin/messagedetails/',txhash]);
+}
+
+clickMe(txhash){
+  this.detaildata=[];
+  this.modalview=true; 
+  this._messageService.searchMessageWithTxHash(txhash)
+    .subscribe(data =>{
+     this.detaildata   =  data;  
+     console.log(data);
+    },
+    error =>this.errorMsg  = error );
+  
+}
+
+close() {
+  this.modalview=false;
 }
 
 }

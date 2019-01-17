@@ -67,3 +67,10 @@
     margin-right: 15px;
     margin-top: -87px;
 }
+.adminPanel{
+    background-image:url('../assets/img/map.png');
+    background-repeat: no-repeat;
+    background-position: top center;
+    background-size: 100%;
+    background-color: white;
+}

@@ -1,7 +1,7 @@
 
 <div class="adminbox">
 <div class="row calenderdiv">
-  <div class="col-4 text-right font-18">Select Date Range</div>
+  <div class="col-4 text-right font-18"><b>Select Date Range</b></div>
   <div class="col-3 calender">
     <my-date-range-picker name="mydaterange" [options]="myDateRangePickerOptions" [(ngModel)]="model"
     required name="mydaterange" (dateRangeChanged)="onDateRangeChanged($event);" ></my-date-range-picker>
@@ -15,7 +15,7 @@
       <div class="col-2"><b>Subscriber Details</b></div>
       <div class="col-2"><b>Message</b></div>
       <div class="col-3"><b>Time</b></div>
-      <div class="col-2"><b>Status</b></div>
+      <div class="col-2"><b>Details</b></div>
   </div>
   <hr>
   <perfect-scrollbar style="max-width: 1450px;max-height: 339px;" [config]="config">
@@ -27,7 +27,8 @@
           <div class="col-2">{{listdetails.vendor}}</div>
           <div class="col-2">{{listdetails.message}}</div>
           <div class="col-3">{{listdetails.timestamp | date :'short'}}</div>
-          <div class="col-2 pointer"> <img src="../assets/img/edit-property.png" style="padding-right: 6px;width: 24px;" (click)="viewdetails(listdetails._id)" title="View Details"></div>
+          <!-- <div class="col-2 pointer"> <img src="../assets/img/edit-property.png" style="padding-right: 6px;width: 24px;" (click)="viewdetails(listdetails._id)" title="View Details"></div> -->
+          <div class="col-2 pointer"> <img src="../assets/img/edit-property.png" style="padding-right: 6px;width: 24px;" (click)="clickMe(listdetails._id)" title="View Details"></div>
       </div>
       <hr> 
     </div>
@@ -42,4 +43,54 @@
 </perfect-scrollbar>
 </div>
 
+</div>
+<div id="modal-id" class="modal-custom " *ngIf='modalview'>   
+  <div class="modal-custom-container">   
+  <div class="modal-header">   
+    <h3>Details</h3>  
+    <span class="close-modal" (click)="modalview=false">&#10006;</span>
+  </div>   
+ <br>
+  <div class="detailscontainer">  
+  <div class="row">
+              <div class="col-4 mleft"><b>To&nbsp;:</b></div>
+              <div class="col-8">{{detaildata.to}}</div>
+          </div>
+          <hr>
+          <div class="row">
+              <div class="col-4 mleft"><b>From&nbsp;:</b></div>
+              <div class="col-8">{{detaildata.from}}</div>
+          </div>
+          <hr>
+          <div class="row">
+              <div class="col-4 mleft"><b>Vendor&nbsp;:</b></div>
+              <div class="col-8">{{detaildata.vendor}}</div>
+          </div>
+          <hr>
+          <div class="row">
+              <div class="col-4 mleft"><b>Message&nbsp;:</b></div>
+              <div class="col-8 wordwrap">{{detaildata.message}} with &nbsp;{{detaildata.shaOfMessage}}</div>
+          </div>
+          <hr>
+          <div class="row">
+              <div  class="col-4 mleft"><b>Date & Time&nbsp;:</b></div>
+              <div class="col-8">{{detaildata.timestamp | date :'short'}}</div>
+          </div> 
+          <hr>
+          <div class="row">
+                  <div  class="col-4 mleft"><b>Status&nbsp;:</b></div>
+                  <div class="col-8">
+                          <span *ngIf="detaildata.msgVerificationResult == 'true'">
+                                  <img src="../assets/img/verified.png" style="padding-right: 6px;width: 24px;">
+                              Verified
+                          </span>
+                          <span *ngIf="detaildata.msgVerificationResult == 'false'">
+                                  <img src="../assets/img/nonverified.png" style="padding-right: 6px;width: 24px;">
+                              Non-Verified
+                          </span>
+                          
+                  </div>
+              </div>
+      </div>  
+  </div>   
 </div>

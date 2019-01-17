@@ -14,16 +14,13 @@ export class MessagedetailsComponent implements OnInit {
   public txhash="";
   public listdata=[];
   public errorMsg;
-  orgName = 'user';
   constants = ApplicationConstants;
 
   constructor(public router: Router,private activatedRoute: ActivatedRoute,private _messageService:MessageService) { }
 
   ngOnInit() {
 
-    if(sessionStorage.getItem('org')!=null){
-      this.orgName = sessionStorage.getItem('org');
-    }
+    
 
     this.txhash = this.activatedRoute.snapshot.paramMap.get('txhash');
     this._messageService.searchMessageWithTxHash(this.txhash)
